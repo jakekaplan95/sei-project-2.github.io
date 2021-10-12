@@ -1,6 +1,6 @@
-require('dotenv').config()
 
 //Dependencies
+require('dotenv').config()
 const express = require('express');
 const methodOverride = require('method-override');
 const mongoose = require ('mongoose');
@@ -49,8 +49,7 @@ app.get('/' , (req, res) => {
   res.send('Yay! the app works');
 });
 
-console.log(PORT);
-console.log(process.env.PORT);
-console.log(process.env);
+
+
 //LISTENER
 app.listen(PORT, () => console.log('listening', PORT));
