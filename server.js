@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 // How to connect to the database either via heroku or locally
 const MONGODB_URI = process.env.MONGODB_URI;
 
-// Connect to Mongo &
+// Connect to Mongo
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
 mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true }
@@ -49,5 +49,8 @@ app.get('/' , (req, res) => {
   res.send('Yay! the app works');
 });
 
+console.log(PORT);
+console.log(process.env.PORT);
+console.log(process.env);
 //LISTENER
-app.listen(3000, () => console.log('listening'));
+app.listen(PORT, () => console.log('listening', PORT));
