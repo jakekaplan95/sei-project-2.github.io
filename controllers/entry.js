@@ -42,27 +42,33 @@ Entry.remove({}, (err, data) => {
 })
 
 // INDEX
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
     Entry.find({username: req.session.username}, (err, entries) => {
       res.render("entries/index.ejs", {entries});
     });
   });
 
 // NEW
-app.get("/new", (req, res) => {
+router.get("/new", (req, res) => {
     res.render("entries/new.ejs")
 })
 
 // CREATE
-app.post("/", (req, res) => {
+router.post("/", (req, res) => {
     req.body.username = req.session.username
     Entry.create(req.body, (err, fruit) => {
         res.redirect("/entries")
     })
 })
 
+// DELETE
+router.delete("/entries/:indexOfEntriesArray", (req, res) => {
+    entries.splice(req.params.indexOfEntriesArray, 1)
+    res.redirect('/entries')
+})
+
 // EDIT
-app.get("/:id/edit", (req, res) => {
+router.get("/:id/edit", (req, res) => {
     const id = req.params.id
     Entry.findById(id, (err, entry) => {
         res.render("entries/edit.ejs", {entry})
@@ -71,12 +77,31 @@ app.get("/:id/edit", (req, res) => {
 
 // UPDATE
 router.put("/:id", (req, res) =>{
-    // get the id param
-    const id = req.params.id// convert readyToEat to true or false
-    req.body.readyToEat = req.body.readyToEat === "on" ? true : false
-    //update the fruit
-    Fruit.findByIdAndUpdate(id, req.body, {new: true}, (err, fruit) => {
-        // redirect back to main page
-        res.redirect("/fruits")
+    const id = req.params.id
+    Entry.findByIdAndUpdate(id, req.body, {new: true}, (err, entry) => {
+        res.redirect("/entries")
     })
 })
+
+router.delete("/:id", (req, res) => {
+    const id = req.params.id
+    Entry.findByIdAndRemove(id, (err, entry) => {
+        res.redirect("/entries")
+    })
+})
+
+
+// SHOW
+router.get("/:id", (req, res) => {
+    const id = req.params.id
+
+    Entry.findById(id, (err, entry) => {
+        res.render("entries/show.ejs", {entry})
+    })
+})
+
+////////////////////////
+// Export the Router
+/////////////////////////
+
+module.exports =  router

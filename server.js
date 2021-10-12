@@ -1,14 +1,20 @@
 
-//Dependencies
+//DEPENDENCIES
 require('dotenv').config()
 const express = require('express');
+const morgan = require("morgan")
 const methodOverride = require('method-override');
+const EntryRouter = require("./controllers/entry")
+const UserRouter = require("./controllers/user")
 const mongoose = require ('mongoose');
-const app = express();
 const db = mongoose.connection;
+const session = require("express-session")
+const MongoStore = require("connect-mongo")
+
+const app = express();
+
 
 //PORT
-// Allow use of Heroku's port or your own local port, depending on the environment
 const PORT = process.env.PORT || 3000;
 
 //DATABASE
@@ -26,22 +32,25 @@ db.on('error', (err) => console.log(err.message + ' is mongodb not running?'));
 db.on('connected', () => console.log('mongodb connected'));
 db.on('disconnected', () => console.log('mongodb disconnected'));
 
-
+///////////////////////
 //MIDDLEWARE
-//parse
+///////////////////////
+app.use(morgan("tiny"))
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"))
-
-
-//use public folder for static assets
-app.use(express.static('public'));
-
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
-
-//use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+app.use(session({
+  secret: process.env.SECRET,
+  store: MongoStore.create({mongoUrl: process.env.DATABASE_URL}),
+  saveUninitialized: true,
+  resave: false
+}))
+
+app.use("/entries", EntryRouter)
+app.use("/user", UserRouter)
 
 
 // ROUTES
