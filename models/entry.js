@@ -12,8 +12,8 @@ const entrySchema = new Schema({
     id: Number,
     purchaseDate: Date,
     purchasePrice: Number,
-    saleDate: Date,
-    salePrice: Number,
+    soldDate: Date,
+    soldPrice: Number,
     username: String
 })
 

@@ -44,6 +44,7 @@ Entry.remove({}, (err, data) => {
 // INDEX
 router.get("/", (req, res) => {
     Entry.find({username: req.session.username}, (err, entries) => {
+        console.log(entries)
       res.render("entries/index.ejs", {entries});
     });
   });
@@ -56,7 +57,7 @@ router.get("/new", (req, res) => {
 // CREATE
 router.post("/", (req, res) => {
     req.body.username = req.session.username
-    Entry.create(req.body, (err, fruit) => {
+    Entry.create(req.body, (err, entry) => {
         res.redirect("/entries")
     })
 })
