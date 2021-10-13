@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: false }));// extended: false - does not a
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 app.use(methodOverride('_method'));
 app.use(session({
-  secret: process.env.SECRET,
+  // secret: process.env.SECRET,
   store: MongoStore.create({mongoUrl: process.env.MONGODB_URI}),
   saveUninitialized: true,
   resave: false
