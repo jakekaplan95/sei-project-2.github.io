@@ -22,7 +22,6 @@ mongoose.connection.on("open", () => {
           Entry.create(beginEntry, (err, data) => {
               console.log(".....Entries CREATED......")
               console.log(data)
-              console.log(".....Entries CREATED......")
         })
 
           //close the connection

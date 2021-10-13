@@ -35,10 +35,9 @@ db.on('disconnected', () => console.log('mongodb disconnected'));
 app.use(morgan("tiny"))
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"))
-// populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
-app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+app.use(methodOverride('_method'));
 app.use(session({
   secret: process.env.SECRET,
   store: MongoStore.create({mongoUrl: process.env.DATABASE_URL}),
@@ -52,7 +51,7 @@ app.use("/user", UserRouter)
 
 // ROUTES
 app.get('/' , (req, res) => {
-  res.send('Yay! the app works');
+  res.render('index.ejs');
 });
 
 
