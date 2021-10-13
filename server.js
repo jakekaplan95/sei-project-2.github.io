@@ -23,7 +23,7 @@ const PORT = process.env.PORT || 3000;
 app.use(morgan("tiny"))
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"))
-app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
+app.use(express.static(__dirname))
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 app.use(methodOverride('_method'));
 

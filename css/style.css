@@ -1,6 +1,13 @@
 
 
 
+.title{
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 body{
     background-image: url("../img/NFT.jpeg");
    }

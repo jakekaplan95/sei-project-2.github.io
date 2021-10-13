@@ -18,6 +18,8 @@
 https://sei-project-purchases.herokuapp.com/
 https://github.com/jakekaplan95/sei-project-2.github.io
 
+![Wireframe](sei-project-2.github.io/img/Purchase-Sales Diary-Page-2.jpg)
+
 ***Future Adjustments***
 
 This is an app that I would actually like to spend more time on in order to use for myself! The information I can store and and add for future use is very helpful to me with some things that I am working on outside of class. This work-in-progress project will, upon completion, serve as an excellent tool for me to be able to filter/sort through purchases by specific parameters, calculate short/long term gains and losses, and provide other relevant statistics to help me better understand my own portfolio.

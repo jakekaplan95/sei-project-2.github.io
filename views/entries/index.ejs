@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
 
 <body>
     <div class= "title">Checkbook Diary</div>
@@ -20,10 +20,10 @@
                 </h2>
                 </a>
 
-                <h3 class="redBack">   <%= entry.purchasePrice %>
+                <h3 >   <span class="redBack"><%= entry.purchasePrice %> Eth</span><br>
+                    <span class="greenBack"><%= entry.soldPrice %> Eth</span>
                 </h3>
-                <h4 class="greenBack">                    <%= entry.soldPrice %>
-                </h4>
+
 
             </article>
         <% } %>
