@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
 
 <body>
     <main>=
         <div>
             <article>
                 <h2>
-                <%= entry.name %>
-                <%= entry.id %>
-                <%= entry.purchaseDate %>
-                <%= entry.purchasePrice %>
-                <%= entry.soldDate %>
-                <%= entry.soldPrice %>
+               <span class="title"><%= entry.name %></span> <br>
+                <span><%= entry.id %></span>
+                <span class="redBack">Purchased for: <%= entry.purchasePrice %> Eth</span><br>
+                <span class="greenBack">Sold for: <%= entry.soldPrice %> Eth</span><br>
+                <span class="whiteText">Date Purchased: <%= entry.purchaseDate %></span><br>
+                <span class="whiteText">Date Sold: <%= entry.soldDate %></span><br>
                 </h2>
 
                 <a href="/entries/<%= entry._id %>/edit"><button>Edit</button></a>

@@ -3,7 +3,8 @@
 
 .title{
     text-align: center;
-    font-size: larger;
+    font-size: 80px;
+    color: purple;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -18,4 +19,20 @@ body{
 
 .greenBack{
     background-color: green;
+}
+
+.whiteBack{
+    background-color: royalblue;
+}
+
+.whiteText{
+    background-color: thistle;
+}
+
+.show{
+    color: white
+}
+
+.showName{
+    color: purple
 }

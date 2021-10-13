@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
 
 <body>
     <main>=
         <div>
             <form action="/entries/<%= entry._id %>?_method=PUT" method="post">
                 <fieldset>
-                    <legend>Edit <%= entry.name %></legend>
-                    <label>Name: <input
+                    <legend class="title">Edit <%= entry.name %></legend>
+                    <label class="whiteBack">Name: <input
                         type="text"
                         name="name"
                         placeholder="Name of purchase"
                         value="<%=entry.name %>"
                         />
-                     </label>
-                     <label>
+                     </label><br>
+                     <label class="whiteBack">
                          Purchase Date:
                          <input
                          type="date"
@@ -23,8 +23,8 @@
                          placeholder="Enter purchase date"
                          value="<%=entry.purchaseDate %>"
                          />
-                     </label>
-                     <label>
+                     </label><br>
+                     <label class="whiteBack">
                         Purchase Price:
                         <input
                         type="number"
@@ -32,8 +32,8 @@
                         placeholder="Enter purchase price"
                         value="<%=entry.purchasePrice %>"
                         />
-                    </label>
-                    <label>
+                    </label><br>
+                    <label class="whiteBack">
                         Date Sold:
                         <input
                         type="date"
@@ -41,8 +41,8 @@
                         placeholder="Enter date sold"
                         value="<%=entry.soldDate %>"
                         />
-                    </label>
-                    <label>
+                    </label><br>
+                    <label class="whiteBack">
                         Sell price:
                         <input
                         type="number"
@@ -50,7 +50,7 @@
                         placeholder="Enter sell price"
                         value="<%=entry.soldPrice %>"
                         />
-                    </label>
+                    </label><br>
 
 
                      <input type="submit" value="Submit New Entry" />

@@ -18,7 +18,7 @@
 https://sei-project-purchases.herokuapp.com/
 https://github.com/jakekaplan95/sei-project-2.github.io
 
-![Wireframe](sei-project-2.github.io/img/Purchase-Sales Diary-Page-2.jpg)
+![Wireframe](https://github.com/jakekaplan95/sei-project-2.github.io/blob/main/img/Purchase-Sales%20Diary-Page-2.jpg)
 
 ***Future Adjustments***
 
