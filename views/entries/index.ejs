@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="stylesheet" href="../css/style.css" />
+
 <body>
+    <div class= "title">Checkbook Diary</div>
     <main>
         <div>
 
@@ -12,12 +15,16 @@
                 <a href="/entries/<%= entry._id %>">
                 <h2>
                     <%= entry.name %>
-                    <%= entry.id %>
-                    <%= entry.purchaseDate %>
-                    <%= entry.purchasePrice %>
-                    <%= entry.soldDate %>
-                    <%= entry.soldPrice %>
-                </h2></a>
+
+
+                </h2>
+                </a>
+
+                <h3 class="redBack">   <%= entry.purchasePrice %>
+                </h3>
+                <h4 class="greenBack">                    <%= entry.soldPrice %>
+                </h4>
+
             </article>
         <% } %>
         </div>

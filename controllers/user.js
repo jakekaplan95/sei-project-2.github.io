@@ -18,7 +18,9 @@ router.get("/signup", (req, res) => {
 router.post("/signup", async (req, res) => {
     req.body.password = await bcrypt.hash(req.body.password, await bcrypt.genSalt(10))
     User.create(req.body, (err, user) => {
-        res.redirect("/user/login")
+        req.session.username = req.body.username
+        req.session.loggedIn = true
+        res.redirect("/entries");
     })
 })
 
