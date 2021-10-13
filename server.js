@@ -26,8 +26,11 @@ app.use(express.static("public"))
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 app.use(methodOverride('_method'));
+
+const secret = process.env.SECRET || Math.random().toString()
+
 app.use(session({
-  // secret: process.env.SECRET,
+  secret: secret,
   store: MongoStore.create({mongoUrl: process.env.MONGODB_URI}),
   saveUninitialized: true,
   resave: false
