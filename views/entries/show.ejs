@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <main>=
+        <div>
+            <article>
+                <h2>
+                <%= entry.name %>
+                <%= entry.id %>
+                <%= entry.purchaseDate %>
+                <%= entry.purchasePrice %>
+                <%= entry.soldDate %>
+                <%= entry.soldPrice %>
+                </h2>
+
+                <a href="/entries/<%= entry._id %>/edit"><button>Edit</button></a>
+                <form action="/entries/<%= entry._id %>?_method=DELETE "
+                    method="post">
+                <input type = "submit" value="Delete" />
+                </form>
+            </article>
+        </div>
+    </main>
+
+</body>
+</html>

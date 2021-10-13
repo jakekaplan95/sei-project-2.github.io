@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <main>=
+        <div>
+            <form action="/entries/<%= entry._id %>?_method=PUT" method="post">
+                <fieldset>
+                    <legend>Edit <%= entry.name %></legend>
+                    <label>Name: <input
+                        type="text"
+                        name="name"
+                        placeholder="Name of purchase"
+                        value="<%=entry.name %>"
+                        />
+                     </label>
+                     <label>
+                         Purchase Date:
+                         <input
+                         type="date"
+                         name="purchase date"
+                         placeholder="Enter purchase date"
+                         value="<%=entry.purchaseDate %>"
+                         />
+                     </label>
+                     <label>
+                        Purchase Price:
+                        <input
+                        type="number"
+                        name="purchase price"
+                        placeholder="Enter purchase price"
+                        value="<%=entry.purchasePrice %>"
+                        />
+                    </label>
+                    <label>
+                        Date Sold:
+                        <input
+                        type="date"
+                        name="sold date"
+                        placeholder="Enter date sold"
+                        value="<%=entry.soldDate %>"
+                        />
+                    </label>
+                    <label>
+                        Sell price:
+                        <input
+                        type="number"
+                        name="sell price"
+                        placeholder="Enter purchase price"
+                        value="<%=entry.soldPrice %>"
+                        />
+                    </label>
+
+
+                     <input type="submit" value="Submit New Entry" />
+
+                </fieldset>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>

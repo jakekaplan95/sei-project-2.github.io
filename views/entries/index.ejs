@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <main>
+        <div>
+
+            <a href="/entries/new"><button>Make a New Entry</button></a>
+            <a href="/user/logout"><button>Logout</button></a>
+
+            <% for (entry of entries) { %>
+            <article>
+                <a href="/entries/<%= entry._id %>">
+                <h2>
+                    <%= entry.name %>
+                </h2></a>
+            </article>
+        <% } %>
+        </div>
+    </main>
+
+</body>
+</html>
